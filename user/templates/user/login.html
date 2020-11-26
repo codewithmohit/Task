@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Login</title>
+  </head>
+  <body>
+      <section class="" style="height:100vh;background-color: rgb(0, 247, 255) ">
+        <div class="row mr-0" style="display: flex;justify-content:center;align-items: center;height: 100%;">
+            <div class="row shadow" style="width:25%;background-color: white;height:60%;">
+                <div class="row mt-5 mr-0" style="width: 100%;">
+                    <h3 class="text-center text-dark" style="width: 100%;">
+                   <b> LOGIN </b>
+                    </h3>
+                </div>
+                <div class="row mx-5 mt-0" style="width:80%;">
+                    <form class="" style="width: 100%;" action="/login/" method="post">{% csrf_token %}
+                        <div class="form-group" style="width: 100%;" >
+                          <input type="email" class="form-control" id="exampleFormControlInput" name="email" placeholder="email id">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="exampleFormControlInput1" name="password" placeholder="password">
+                          </div>
+                          <button class="btn btn-block btn-primary" > Login
+                          </button>
+                <p class="text-center pb-5 " style="width:100%;border-bottom:1px solid black;"> <a href="/forget">Forgotten password?</a> </p>
+                <a href="/signup" class="btn btn-success btn-block" >Create New Account </a>
+                        </form>
+                </div>
+                
+            </div>
+        </div>
+      </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script>
+    {% if thank %}
+alert('Please Enter correct Email-id and Password.');
+document.location = '/login/';
+{% endif %}
+</script>
+  </body>
+</html>
